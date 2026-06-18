@@ -32,7 +32,37 @@ async function main() {
       name: "Orientador",
       description: "Usuario encargado de consultar resultados y reportes preliminares",
     },
+    
   });
+  await prisma.role.upsert({
+  where: { name: "Director" },
+  update: {},
+  create: {
+    name: "Director",
+    description:
+      "Usuario encargado de consultar estadísticas generales, reportes institucionales y resultados por grado o sección.",
+  },
+});
+
+await prisma.role.upsert({
+  where: { name: "Padre de familia" },
+  update: {},
+  create: {
+    name: "Padre de familia",
+    description:
+      "Usuario encargado de consultar información autorizada relacionada con su hijo o estudiante asignado.",
+  },
+});
+
+await prisma.role.upsert({
+  where: { name: "Superadministrador" },
+  update: {},
+  create: {
+    name: "Superadministrador",
+    description:
+      "Usuario técnico con capacidad de administrar varias instituciones educativas en futuras fases del sistema.",
+  },
+});
 
   // 2. Usuario administrador inicial
   const passwordHash = await bcrypt.hash("Admin123*", 10);

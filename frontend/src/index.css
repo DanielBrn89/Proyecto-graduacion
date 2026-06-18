@@ -9,3 +9,136 @@ body {
   font-family: system-ui, Arial, sans-serif;
   background-color: #f3f4f6;
 }
+.input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  background-color: white;
+}
+
+.input:focus {
+  border-color: #15803d;
+  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.2);
+}
+@page {
+  size: A4 portrait;
+  margin: 12mm;
+}
+
+@media print {
+  body {
+    background: white !important;
+    font-size: 11px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  aside,
+  header,
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  section {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .print-area {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .overflow-x-auto {
+    overflow: visible !important;
+  }
+
+  table {
+    width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    font-size: 9px !important;
+  }
+
+  th,
+  td {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    padding: 6px !important;
+    vertical-align: top !important;
+  }
+th:nth-child(1),
+td:nth-child(1) {
+  width: 20%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 9%;
+  text-align: center;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 9%;
+  text-align: center;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 31%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 31%;
+}
+  tr {
+    page-break-inside: avoid;
+  }
+
+  .rounded-xl {
+    border-radius: 0 !important;
+  }
+
+  .shadow {
+    box-shadow: none !important;
+  }
+
+  .bg-white {
+    background: white !important;
+  }
+
+  .text-sm {
+    font-size: 10px !important;
+  }
+
+  .text-xs {
+    font-size: 9px !important;
+  }
+
+  .p-6 {
+    padding: 10px !important;
+  }
+
+  .p-3 {
+    padding: 6px !important;
+  }
+
+  .mb-6 {
+    margin-bottom: 10px !important;
+  }
+
+  .space-y-6 > * + * {
+    margin-top: 12px !important;
+  }
+}

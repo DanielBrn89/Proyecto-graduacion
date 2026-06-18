@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
+import { Link } from "react-router-dom";
 
 type Grade = {
   id: number;
@@ -58,9 +59,12 @@ export function StudentsPage() {
           </p>
         </div>
 
-        <button className="mt-4 md:mt-0 bg-green-700 hover:bg-green-800 text-white font-semibold px-4 py-2 rounded-lg">
-          Nuevo estudiante
-        </button>
+       <Link
+  to="/students/new"
+  className="mt-4 md:mt-0 bg-green-700 hover:bg-green-800 text-white font-semibold px-4 py-2 rounded-lg"
+>
+  Nuevo estudiante
+</Link>
       </div>
 
       <section className="bg-white rounded-xl shadow p-5">

@@ -29,6 +29,12 @@ export function MainLayout() {
           </Link>
 
           <Link
+           to="/users"
+           className="block px-4 py-2 rounded-lg hover:bg-green-700">
+           Usuarios
+          </Link>
+
+          <Link
             to="/students"
             className="block px-4 py-2 rounded-lg hover:bg-green-700"
           >

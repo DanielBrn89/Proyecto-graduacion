@@ -4,17 +4,10 @@ import { LoginPage } from "../pages/auth/LoginPage";
 import { DashboardPage } from "../pages/dashboard/DashboardPage";
 import { MainLayout } from "../components/layout/MainLayout";
 import { ProtectedRoute } from "./ProtectedRoute";
-
-function PlaceholderPage({ title }: { title: string }) {
-  return (
-    <section className="bg-white rounded-xl shadow p-6">
-      <h1 className="text-2xl font-bold text-green-700">{title}</h1>
-      <p className="text-gray-600 mt-2">
-        Este módulo será desarrollado en la siguiente fase.
-      </p>
-    </section>
-  );
-}
+import { StudentFormPage } from "../pages/students/StudentFormPage";
+import { EvaluationsPage } from "../pages/evaluations/EvaluationsPage";
+import { ReportsPage } from "../pages/reports/ReportsPage";
+import { UsersPage } from "../pages/users/UsersPage";
 
 export function AppRoutes() {
   return (
@@ -33,8 +26,10 @@ export function AppRoutes() {
           <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="students" element={<StudentsPage />} />
-          <Route path="evaluations" element={<PlaceholderPage title="Evaluaciones" />} />
-          <Route path="reports" element={<PlaceholderPage title="Reportes" />} />
+         <Route path="evaluations" element={<EvaluationsPage />} />
+          <Route path="reports" element={<ReportsPage />} />
+          <Route path="students/new" element={<StudentFormPage />} />
+          <Route path="users" element={<UsersPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
